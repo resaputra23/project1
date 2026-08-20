@@ -30,6 +30,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform State
+        run: terraform state list
+
       - name: Terraform Format Check
         run: terraform fmt -check
 
