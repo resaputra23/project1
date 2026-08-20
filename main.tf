@@ -107,7 +107,6 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              dnf uppdate -y
               dnf install -y nginx
               systemctl enable nginx
               systemctl start nginx
