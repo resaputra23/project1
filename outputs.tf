@@ -17,3 +17,7 @@ output "vpc_subnet_public_cidr" {
   description = ""
   value       = aws_subnet.public_testing0826.cidr_block
 }
+
+output "web_public_ip" {
+  value = aws_instance.web.public_ip
+}

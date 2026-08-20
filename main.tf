@@ -77,24 +77,25 @@ resource "aws_security_group" "web" {
   }
 }
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-  owners      = ["amazon"]
+#data "aws_ami" "amazon_linux" {
+#  most_recent = true
+#  owners      = ["amazon"]
 
-  filter {
-    name   = "name"
-    values = ["al2023-ami-*-x86_64"]
-  }
+# filter {
+#    name   = "name"
+#    values = ["al2023-ami-*-x86_64"]
+#  }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
+# filter {
+#    name   = "virtualization-type"
+#    values = ["hvm"]
+#  }
+#}
 
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.amazon_linux.id
+  #ami           = data.aws_ami.amazon_linux.id
+  ami           = "ami-0332d564d76dbd8d6"
   instance_type = "t2.micro"
 
   subnet_id = aws_subnet.public_testing0826.id
